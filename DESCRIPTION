@@ -1,0 +1,27 @@
+Package: geofaceteAR
+Title: Acomodar las Grillas como Mapas
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Juan Pablo",
+           family = "Ruiz Nicolini",
+           role = c("aut", "cre"),
+           email = "juanpabloruiznicolini@gmail.com",
+           comment = c(ORCID = "0000-0002-3138-6343"))
+Description: Caja de herramienta para el análisis de datos políticos y electorales de Argentina.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Language: es
+URL: https://github.com/electorArg/geofaceteAR
+BugReports: https://github.com/electorArg/geofaceteAR/issues
+LazyData: true
+Depends: geofacet
+Imports: 
+    magrittr, 
+    purrr, 
+    attempt, 
+    assertthat,
+    curl, 
+    gt
+Suggests:
+    ggplot2
+RoxygenNote: 6.1.1
