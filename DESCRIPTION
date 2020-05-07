@@ -14,14 +14,21 @@ Language: es
 URL: https://github.com/electorArg/geofaceteAR
 BugReports: https://github.com/electorArg/geofaceteAR/issues
 LazyData: true
-Depends: geofacet
-Imports: 
-    magrittr, 
+Depends: geofacet, R (>= 2.10)
+Imports:
+    magrittr,
     purrr, 
     attempt, 
     assertthat,
     curl, 
-    gt
+    gt, 
+    dplyr, 
+    glue, 
+    stringr
 Suggests:
-    ggplot2
+    ggplot2,
+    knitr,
+    rmarkdown, 
+    patchwork
 RoxygenNote: 6.1.1
+VignetteBuilder: knitr

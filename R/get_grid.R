@@ -18,14 +18,17 @@
 
     # Check parameters
 
-
-    assertthat::assert_that(is.character(distrito), msg = "distrito debe ser del tipo 'character'")
+    assertthat::assert_that(!is.null(distrito),
+                            msg = "debe ingresar un distrito valido. Chequear opciones con 'show_arg_grids()")
+                            
+    assertthat::assert_that(is.character(distrito), 
+                            msg = "distrito debe ser del tipo 'character'. Chequear opciones con 'show_arg_grids()")
 
     assertthat::assert_that(distrito %in% c("ARGENTINA", "CABA", "CATAMARCA", "CHACO", "CHUBUT", "CORDOBA", "CORRIENTES",
                                             "ENTRE RIOS", "FORMOSA", "JUJUY", "LA PAMPA", "LA RIOJA", "MENDOZA", "MISIONES",
                                             "NEUQUEN","PBA", "RIO NEGRO", "SALTA", "SANTA CRUZ", "SANTA FE", "SANTIAGO DEL ESTERO",
                                             "SAN JUAN", "SAN LUIS", "TIERRA DEL FUEGO", "TUCUMAN"),
-                            msg = "no es un distrito valido. Chequearlos con 'show_grids()")
+                            msg = "no es un distrito valido. Chequearlos con 'show_arg_grids()")
 
 
           # Cargo geo-grids
