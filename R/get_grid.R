@@ -4,7 +4,7 @@
 #' de Argentina.
 #'
 #'@param distrito un character con el nombre del distrito que se quiere descargar. Disponibles grillas para Argentina
-#' y para cada provincia. Se pueden chequear los parametros con \code{\link{show_grids}}.
+#' y para cada provincia. Se pueden chequear los parametros con \code{\link{show_arg_grids}}.
 #'@export
 
 

@@ -2,6 +2,6 @@
 
 export("%>%")
 export(get_grid)
-export(show_grids)
+export(show_arg_grids)
 import(geofacet)
 importFrom(magrittr,"%>%")
