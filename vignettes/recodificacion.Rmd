@@ -1,0 +1,79 @@
+---
+title: "Recodificar distritos"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{recodificacion}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(geofaceteAR)
+library(patchwork)
+```
+
+
+En el siguiente ejemplo podemos ver disintas opciones de código para las provincias de Argentina
+
+```{r}
+
+# CODIGOS DE INDRA
+argentina_indra <- get_grid("ARGENTINA") %>% 
+  recode_district(type = "indra")
+
+argentina_indra 
+
+
+# CODIGOS ISO
+argentina_iso <- get_grid("ARGENTINA") %>% 
+  recode_district(type = "iso")
+
+argentina_iso
+
+# CODIGOS DE INDEC (POR DEFECTO)
+argentina_indec <- get_grid("ARGENTINA") %>% 
+  recode_district(type = "indec")
+
+argentina_indec
+
+
+
+```
+
+
+Estos códigos sirven para _linkear_ la base de datos que estemos uzando con la grilla seleccionada en un gráfico de \pkg{ggplot2} haciendo `facet` con la función `facet_geo`de \pkg{geofacet}. Todas las funciones de este paquete están disponibles al utilizar cargada en \pkg{gepofaceteAR}. 
+
+Así, por ejemplo, podemos inspeccionar el diseño de las grillas con `grid_preview()`:
+
+```{r}
+
+
+
+# TODAS LAS GRILLAS
+
+grid_preview(argentina_indra) -> a
+
+
+grid_preview(argentina_iso) -> b
+
+
+grid_preview(argentina_indec) -> c
+
+
+(a + b + c)
+
+
+
+
+
+```
+
+
+

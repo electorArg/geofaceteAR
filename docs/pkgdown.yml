@@ -2,6 +2,6 @@ pandoc: 2.7.2
 pkgdown: 1.5.1
 pkgdown_sha: ~
 articles:
-  recode_district: recode_district.html
-last_built: 2020-05-09T16:31Z
+  recodificacion: recodificacion.html
+last_built: 2020-05-09T18:22Z
 
