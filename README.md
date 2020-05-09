@@ -13,6 +13,16 @@ Con este paquete nos montamos sobre ese desarrollo y agregamos funciones de util
 _“Amplía `ggplot2` de una manera que facilita la creación de visualizaciones geográficamente facetadas en `R`. Para hacer `geofacet` se toman datos que representan diferentes entidades geográficas y se aplica un método de visualización para cada entidad. El conjunto resultante de visualizaciones conforma una cuadrícula que imita la topología geográfica original”._ ([Ryan Haffen](https://ryanhafen.com/blog/geofacet/) - traducción propia)
 
 
+
+### INSTALACIÓN 
+
+````
+# install.packages('devtools') si no tiene instalado devtools
+
+# Instalar {geofaceteAR} desde repositorio de github
+devtools::install_github("https://github.com/electorArg/geofaceteAR")
+```
+
 ### `{geofaceteAR}`
 
 En esta versión el paquete incluye unas pocas funciones: 
