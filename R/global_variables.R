@@ -21,4 +21,8 @@ if(getRversion() >= "2.15.1")  utils::globalVariables(c("distrito",
                                                         "name_iso", 
                                                         "coddepto", 
                                                         "coddepto_censo", 
-                                                        "nomdepto_censo"))
+                                                        "nomdepto_censo", 
+                                                        ".", 
+                                                        "name",
+                                                        "id", 
+                                                        "Distrito"))

@@ -14,3 +14,11 @@ show_arg_codes(viewer = TRUE, nivel = "provincias")
 \description{
 Funcion que devuelve un data.frame con codigos y equivalencias de identificacion de unidades geograficas
 }
+\details{
+La opción \code{viewer = TRUE} muestra un tabulado formateado en el _Viewer_ de _RStudio_.
+}
+\examples{
+
+show_arg_grids(viewer = FALSE)
+
+}

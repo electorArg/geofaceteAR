@@ -13,7 +13,7 @@
 show_arg_grids <- function(viewer = TRUE){
 
 
-  names <- data.frame(Distrito = c("ARGENTINA", "CABA", "CATAMARCA", "CHACO", "CHUBUT", "CORDOBA", "CORRIENTES",
+  names <- data.frame(id = c("ARGENTINA", "CABA", "CATAMARCA", "CHACO", "CHUBUT", "CORDOBA", "CORRIENTES",
     "ENTRE RIOS", "FORMOSA", "JUJUY", "LA PAMPA", "LA RIOJA", "MENDOZA", "MISIONES",
     "NEUQUEN","PBA", "RIO NEGRO", "SALTA", "SANTA CRUZ", "SANTA FE", "SANTIAGO DEL ESTERO",
     "SAN JUAN", "SAN LUIS", "TIERRA DEL FUEGO", "TUCUMAN"))
@@ -23,8 +23,14 @@ show_arg_grids <- function(viewer = TRUE){
   if(viewer == TRUE){
 
     names %>%
-      gt::gt()
+      gt::gt()%>%
+      gt::tab_header(
+        title = gt::md("**Grillas como si fueran mapas de Argentinas**"),
+        subtitle = gt::md(glue::glue(("**Modo de uso:** *geofaceteAR::get_grid(distrito = 'id')*")))) %>% 
+      gt::tab_source_note(
+        source_note = gt::md("**Fuente:** {geofaceteAR}  - *https://electorarg.github.io/geofaceteAR*"))
 
+  
          }else{
 
            names

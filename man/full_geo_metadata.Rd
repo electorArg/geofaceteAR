@@ -3,12 +3,12 @@
 \docType{data}
 \name{full_geo_metadata}
 \alias{full_geo_metadata}
-\title{Equivalencias de codigos de identificacion geografica}
+\title{Equivalencias de códigos de identificación geográfica}
 \format{Un tibble con 526 filas y 8 variables:
 \describe{
-  \item{codprov, coddepto}{identificadores utilizados por INDRA para escrutinios provisorios de elecciones nacionales}
-  \item{VAR_censo}{identificadores de unidades geograficas del INDEC}
-  \item{VAR_iso}{identificadores de International Organization for Standardization}
+  \item{codprov, coddepto}{identificadores utilizados por _INDRA_ para escrutinios provisorios de elecciones nacionales}
+  \item{*_censo}{identificadores de unidades geográficas del _INDEC_}
+  \item{*_iso}{identificadores de _International Organization for Standardization_}
   
   ...
 }}
@@ -16,6 +16,6 @@
 full_geo_metadata
 }
 \description{
-Contiene identificadores geograficos para 525 departametnos de Argentina
+Un archivo de datos que contiene identificadores geográficos para 525 departametnos de Argentina
 }
 \keyword{datasets}

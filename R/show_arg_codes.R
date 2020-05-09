@@ -6,6 +6,12 @@
 #'@param nivel  Opcion para ver diccionario a nivel de \code{"provincias"} o de \code{"departamentos"}.
 #'@import geofacet
 #'
+#'@examples 
+#'
+#' show_arg_grids(viewer = FALSE)
+#' 
+#' @details  La opción \code{viewer = TRUE} muestra un tabulado formateado en el _Viewer_ de _RStudio_. 
+#'
 #'@export
 
 
@@ -26,14 +32,14 @@ show_arg_codes <- function(viewer = TRUE,
   
  seleccion <-  if(nivel == "provincias"){
 
-provincia <-  full_geo_metadata %>% 
-  dplyr::select(id = name_prov, codprov, codprov_censo, codprov_iso, name_iso) %>% 
-  dplyr::distinct()
+  full_geo_metadata %>% 
+    dplyr::select(id = name_prov, codprov, codprov_censo, codprov_iso, name_iso) %>% 
+    dplyr::distinct()
 
   } else {
 
-departamento <- full_geo_metadata %>% 
-  dplyr::select(id = name_prov, codprov, coddepto,
+ full_geo_metadata %>% 
+    dplyr::select(id = name_prov, codprov, coddepto,
                 codprov_censo, coddepto_censo, nomdepto_censo)
   
 
@@ -60,7 +66,9 @@ departamento <- full_geo_metadata %>%
       gt::tab_spanner(columns = dplyr::matches("prov$|depto$"), label = "INDRA") %>%
       gt::tab_header(
         title = gt::md("**Diccionario de equivalencias para identificadores geogrficos**"),
-        subtitle = gt::md(glue::glue(("**Argentina - Nivel {selection}**"))))
+        subtitle = gt::md(glue::glue(("**Argentina - Nivel {selection}**")))) %>% 
+      gt::tab_source_note(
+        source_note = gt::md("**Fuente:** geofaceteAR  - *https://electorarg.github.io/geofaceteAR*"))
     
     
     

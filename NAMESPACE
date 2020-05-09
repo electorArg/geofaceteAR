@@ -2,7 +2,7 @@
 
 export("%>%")
 export(get_grid)
-export(recode_prov)
+export(recode_district)
 export(show_arg_codes)
 export(show_arg_grids)
 import(geofacet)

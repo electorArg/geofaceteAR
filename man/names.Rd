@@ -14,6 +14,6 @@
 names
 }
 \description{
-contiene el id para llamar a las grillas de Argetina o alguna de las 24 provincias
+Un archivo de datos que contiene el `id` para llamar a las grillas de Argetina o alguna de las 24 provincias
 }
 \keyword{datasets}

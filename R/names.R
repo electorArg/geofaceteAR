@@ -1,6 +1,6 @@
 #' Nombres de distritos con grillas disponibles
 #'
-#' contiene el id para llamar a las grillas de Argetina o alguna de las 24 provincias
+#' Un archivo de datos que contiene el `id` para llamar a las grillas de Argetina o alguna de las 24 provincias
 #' 
 #'
 #' @format Un data frame con 25 filas y 1 variable:

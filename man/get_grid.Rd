@@ -14,3 +14,8 @@ y para cada provincia. Se pueden chequear los parametros con \code{\link{show_ar
 Funcion que descaga grillas (\emph{facet}) para acomodarlas como si fueran mapas de provincias y deparamentos
 de Argentina.
 }
+\examples{
+
+get_grid("TUCUMAN")
+
+}
