@@ -43,9 +43,12 @@ show_arg_codes <- function(viewer = TRUE,
  full_geo_metadata %>% 
     dplyr::select(id = name_prov, codprov, coddepto,
                 codprov_censo, coddepto_censo, nomdepto_censo) %>% 
-    dplyr::add_row(.before = 1, id = "ARGENTINA",
-                   codprov = " ", codprov_censo = " ",
-                   codprov_iso = "AR", name_iso = "Argentina") 
+    dplyr::add_row(.before = 1, id = "ARGENTINA", 
+                   codprov = " ", 
+                   coddepto = " ",
+                   codprov_censo = " ", 
+                   coddepto_censo = " ", 
+                   nomdepto_censo = " ") 
     
   
 
