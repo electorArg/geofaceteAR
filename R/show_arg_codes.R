@@ -35,13 +35,18 @@ show_arg_codes <- function(viewer = TRUE,
 
   full_geo_metadata %>% 
     dplyr::select(id = name_prov, codprov, codprov_censo, codprov_iso, name_iso) %>% 
-    dplyr::distinct()
+    dplyr::distinct() %>% 
+    dplyr::add_row(.before = 1, id = "ARGENTINA", codprov = " ", codprov_censo = " ", codprov_iso = "AR", name_iso = "Argentina") 
 
   } else {
 
  full_geo_metadata %>% 
     dplyr::select(id = name_prov, codprov, coddepto,
-                codprov_censo, coddepto_censo, nomdepto_censo)
+                codprov_censo, coddepto_censo, nomdepto_censo) %>% 
+    dplyr::add_row(.before = 1, id = "ARGENTINA",
+                   codprov = " ", codprov_censo = " ",
+                   codprov_iso = "AR", name_iso = "Argentina") 
+    
   
 
       }
