@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Diccionario de grillas (<em>facets</em>) disponibles — show_arg_grids • geofaceteAR</title>
+<title>Changelog • geofaceteAR</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,7 @@
 
 
 
-<meta property="og:title" content="Diccionario de grillas (<em>facets</em>) disponibles — show_arg_grids" />
-<meta property="og:description" content="Funcion que devuelve un data.frame con los nombre de distrito disponibles (parametro necesarios para llamar la grilla de interes)" />
+<meta property="og:title" content="Changelog" />
 
 
 
@@ -59,7 +58,7 @@
   </head>
 
   <body data-spy="scroll" data-target="#toc">
-    <div class="container template-reference-topic">
+    <div class="container template-news">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -99,6 +98,9 @@
     </li>
   </ul>
 </li>
+<li>
+  <a href="../news/index.html">Changelog</a>
+</li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
@@ -120,33 +122,32 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Diccionario de grillas (<em>facets</em>) disponibles</h1>
-    <small class="dont-index">Source: <a href='https://github.com/electorArg/geofaceteAR/blob/master/R/show_arg_grids.R'><code>R/show_arg_grids.R</code></a></small>
-    <div class="hidden name"><code>show_arg_grids.Rd</code></div>
+      <h1 data-toc-skip>Changelog <small></small></h1>
+      <small>Source: <a href='https://github.com/electorArg/geofaceteAR/blob/master/NEWS.md'><code>NEWS.md</code></a></small>
     </div>
 
-    <div class="ref-description">
-    <p>Funcion que devuelve un data.frame con los nombre de distrito disponibles (parametro necesarios para llamar la grilla de interes)</p>
-    </div>
-
-    <pre class="usage"><span class='fu'>show_arg_grids</span>(<span class='kw'>viewer</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
-
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
-    <table class="ref-arguments">
-    <colgroup><col class="name" /><col class="desc" /></colgroup>
-    <tr>
-      <th>viewer</th>
-      <td><p>Por default es <code>TRUE</code>. Cuando <code>FALSE</code> imprime en consola.</p></td>
-    </tr>
-    </table>
-
-
+    <div id="geofacetear-001" class="section level1">
+<h1 class="page-header" data-toc-text="0.0.1">
+<a href="#geofacetear-001" class="anchor"></a>geofaceteAR 0.0.1</h1>
+<div id="9-de-mayo-de-2020" class="section level2">
+<h2 class="hasAnchor">
+<a href="<a href='https://github.com/electorArg/geofaceteAR/issues/9'>#9</a>-de-mayo-de-2020" class="anchor"></a>9 de mayo de 2020</h2>
+<ul>
+<li>
+<code><a href="../reference/show_arg_codes.html">show_arg_codes()</a></code> muestra diccionario de códigos de identificación geográfica de distritos de Argentina (provincias y departamentos) y el ID para seleccionar la grilla de interés</li>
+<li>
+<code><a href="../reference/get_grid.html">get_grid()</a></code> llama esa grilla a un objeto para usar con <code>facet_geo()</code> del paquete <code>geofacet</code> *<code><a href="../reference/recode_district.html">recode_district()</a></code>recodifica la variable <code>code</code>de la grilla con identificacdores presentes en el Diccionario.</li>
+</ul>
+</div>
+</div>
   </div>
+
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
       <h2 data-toc-skip>Contents</h2>
     </nav>
   </div>
+
 </div>
 
 

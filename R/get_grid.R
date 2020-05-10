@@ -9,17 +9,11 @@
 #' get_grid("TUCUMAN")
 #'
 #'@param distrito un character con el nombre del distrito que se quiere descargar. Disponibles grillas para Argentina
-#' y para cada provincia. Se pueden chequear los parametros con \code{\link{show_arg_grids}}.
+#' y para cada provincia. Se pueden chequear los parametros con \code{\link{show_arg_codes}}.
 #'@export
 
 
   get_grid <- function(distrito = NULL) {
-
-
-
-    # Check for internet coection
-    attempt::stop_if_not(.x = curl::has_internet(),  # from eph package
-                         msg = "No se detecto acceso a internet. Por favor chequea tu conexion.")
 
     # Check parameters
 
@@ -39,11 +33,15 @@
           # Cargo geo-grids
 
 
-          geofacet <-  readRDS(gzcon(url("https://github.com/electorArg/PolAr_Data/blob/master/geo/grillas_geofacet.rds?raw=true")))
-
-
-           geofacet %>%
-             purrr::pluck(paste0(distrito))
-
+           grillas <- grillas_geofacet %>%
+             dplyr::bind_rows(.id = "name_provincia") %>% 
+             dplyr::group_by(name_provincia) %>% 
+             dplyr::select(row, col, code, name, name_provincia) %>% 
+             tidyr::nest()
+             
+           
+           grillas %>%
+             dplyr::filter(name_provincia == distrito) %>% 
+             tidyr::unnest(cols = c(data)) %>% as.data.frame()
 
   }

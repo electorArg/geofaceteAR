@@ -25,4 +25,7 @@ if(getRversion() >= "2.15.1")  utils::globalVariables(c("distrito",
                                                         ".", 
                                                         "name",
                                                         "id", 
-                                                        "Distrito"))
+                                                        "Distrito", 
+                                                        "data",
+                                                        "name_provincia",
+                                                        "grillas_geofacet"))

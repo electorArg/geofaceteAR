@@ -8,7 +8,7 @@ get_grid(distrito = NULL)
 }
 \arguments{
 \item{distrito}{un character con el nombre del distrito que se quiere descargar. Disponibles grillas para Argentina
-y para cada provincia. Se pueden chequear los parametros con \code{\link{show_arg_grids}}.}
+y para cada provincia. Se pueden chequear los parametros con \code{\link{show_arg_codes}}.}
 }
 \description{
 Funcion que descaga grillas (\emph{facet}) para acomodarlas como si fueran mapas de provincias y deparamentos

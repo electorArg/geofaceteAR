@@ -24,7 +24,9 @@ Imports:
     gt, 
     dplyr, 
     glue, 
-    stringr
+    stringr, 
+    tidyr, 
+    tibble
 Suggests:
     ggplot2,
     knitr,

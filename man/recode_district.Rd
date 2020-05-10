@@ -8,7 +8,7 @@ recode_district(data, type = NULL)
 }
 \arguments{
 \item{data}{debe ser un 'data.frame' obtenido con \code{\link{get_grid}}. Las grillas grillas disponibles 
-se pueden chequear con \code{\link{show_arg_grids}}.}
+se pueden chequear con \code{\link{show_arg_codes}}.}
 
 \item{type}{cual es el código qye se quiere definir en la grilla. Las opciones son \code{'indra'}, \code{'indec'} o \code{'iso'}}
 }
@@ -29,7 +29,6 @@ de INDRA, empresa encargada por muchos años de la tarea y utilizados en la libe
 }
 \examples{
 
-get_grid("ARGENTINA") 
 
 
 get_grid("ARGENTINA") \%>\% 

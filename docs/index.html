@@ -58,6 +58,9 @@
     </li>
   </ul>
 </li>
+<li>
+  <a href="news/index.html">Changelog</a>
+</li>
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
@@ -90,14 +93,22 @@
 <a href="#qu%C3%A9-es-y-qu%C3%A9-hace-geofacet-" class="anchor"></a>Qué es y qué hace <code>{geofacet}</code> ?</h3>
 <p><em>“Amplía <code>ggplot2</code> de una manera que facilita la creación de visualizaciones geográficamente facetadas en <code>R</code>. Para hacer <code>geofacet</code> se toman datos que representan diferentes entidades geográficas y se aplica un método de visualización para cada entidad. El conjunto resultante de visualizaciones conforma una cuadrícula que imita la topología geográfica original”.</em> (<a href="https://ryanhafen.com/blog/geofacet/">Ryan Haffen</a> - traducción propia)</p>
 </div>
+<div id="instalación" class="section level3">
+<h3 class="hasAnchor">
+<a href="#instalaci%C3%B3n" class="anchor"></a>INSTALACIÓN</h3>
+<pre><code># install.packages('devtools') si no tiene instalado devtools
+
+# Instalar {geofaceteAR} desde repositorio de github
+devtools::install_github("https://github.com/electorArg/geofaceteAR")
+</code></pre>
+</div>
 <div id="geofacetear" class="section level3">
 <h3 class="hasAnchor">
 <a href="#geofacetear" class="anchor"></a><code>{geofaceteAR}</code>
 </h3>
 <p>En esta versión el paquete incluye unas pocas funciones:</p>
 <ul>
-<li><p><code><a href="reference/show_arg_codes.html">show_arg_codes()</a></code>: Proveé un diccionario de identificadores geográficos y equivalencias</p></li>
-<li><p><code><a href="reference/show_arg_grids.html">show_arg_grids()</a></code>: Lista los <code>id</code> disponibles para descargar una grilla del distrito de interés.</p></li>
+<li><p><code><a href="reference/show_arg_codes.html">show_arg_codes()</a></code>: Lista los <code>id</code> disponibles para descargar una grilla del distrito de interés y proveé un diccionario de identificadores geográficos y equivalencias.</p></li>
 <li><p><code><a href="reference/get_grid.html">get_grid()</a></code>: obtiene la grilla de interés.</p></li>
 <li><p><code><a href="reference/recode_district.html">recode_district()</a></code>: permite recodificar la variable <code>code</code> dentro de la grilla de interés según distintos diccionarios.</p></li>
 </ul>

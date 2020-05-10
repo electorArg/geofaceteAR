@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Nombres de distritos con grillas disponibles — names • geofaceteAR</title>
+<title>Base de datos de grillas — grillas_geofacet • geofaceteAR</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,8 @@
 
 
 
-<meta property="og:title" content="Nombres de distritos con grillas disponibles — names" />
-<meta property="og:description" content="Un archivo de datos que contiene el `id` para llamar a las grillas de Argetina o alguna de las 24 provincias" />
+<meta property="og:title" content="Base de datos de grillas — grillas_geofacet" />
+<meta property="og:description" content="Grillas de Argentina para usar con geofacet" />
 
 
 
@@ -99,6 +99,9 @@
     </li>
   </ul>
 </li>
+<li>
+  <a href="../news/index.html">Changelog</a>
+</li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
@@ -120,22 +123,26 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Nombres de distritos con grillas disponibles</h1>
-    <small class="dont-index">Source: <a href='https://github.com/electorArg/geofaceteAR/blob/master/R/names.R'><code>R/names.R</code></a></small>
-    <div class="hidden name"><code>names.Rd</code></div>
+    <h1>Base de datos de grillas</h1>
+    <small class="dont-index">Source: <a href='https://github.com/electorArg/geofaceteAR/blob/master/R/grillas_geofacet.R'><code>R/grillas_geofacet.R</code></a></small>
+    <div class="hidden name"><code>grillas_geofacet.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Un archivo de datos que contiene el `id` para llamar a las grillas de Argetina o alguna de las 24 provincias</p>
+    <p>Grillas de Argentina para usar con geofacet</p>
     </div>
 
-    <pre class="usage"><span class='no'>names</span></pre>
+    <pre class="usage"><span class='no'>grillas_geofacet</span></pre>
 
 
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>Un data frame con 25 filas y 1 variable:</p><dl'>
-  <dt>Distrito</dt><dd><p>identificador para descargar la grilla del distrito de interes</p></dd>
+    <p>Una lista que contiene 25 `data.frames` con 5 variables:</p><dl'>
+  <dt>code_provincia</dt><dd><p>identificación del distrito al que pertenece la grilla</p></dd>
+  <dt>col</dt><dd><p>la longirud relativa de los distritos de segundo nivel en la grilla asemejando la geografía</p></dd>
+  <dt>row</dt><dd><p>la longirud relativa de los distritos de segundo nivel en la grilla asemejando la geografía</p></dd>
+  <dt>code</dt><dd><p>cóigo de identificación de cada uno de los distritos que componen la grilla</p></dd>
+  <dt>name</dt><dd><p>conombre de cada uno de los distritos que componen la grilla</p></dd>
   
   ...
 

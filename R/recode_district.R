@@ -15,13 +15,12 @@
 #'@param type cual es el código qye se quiere definir en la grilla. Las opciones son \code{'indra'}, \code{'indec'} o \code{'iso'}
 #'
 #'@param data debe ser un 'data.frame' obtenido con \code{\link{get_grid}}. Las grillas grillas disponibles 
-#' se pueden chequear con \code{\link{show_arg_grids}}.
+#' se pueden chequear con \code{\link{show_arg_codes}}.
 #'
 #' 
 #' 
 #' @examples 
 #' 
-#' get_grid("ARGENTINA") 
 #' 
 #' 
 #' get_grid("ARGENTINA") %>% 
@@ -39,7 +38,7 @@ recode_district <- function(data,
   assertthat::assert_that(is.data.frame(data), 
                           msg = glue::glue("{data} debe ser un 'data.frame' obtenido con la funcion get_grid()"))
   
-  assertthat::assert_that(dim(data)[2] == 4, 
+  assertthat::assert_that(dim(data)[2] == 5, 
                           msg = glue::glue("{data} debe ser un 'data.frame' obtenido con la funcion get_grid()"))
   
   assertthat::assert_that(is.character(type), 
@@ -104,27 +103,30 @@ recode_district <- function(data,
            
            # Me traigo todos los id de depto de tdas las provincias y genero un id unico
            full_codes <- full_geo_metadata %>% 
-             dplyr::select(coddepto, nomdepto_censo, name_prov) %>% 
-             dplyr::mutate(nomdepto_censo = stringr::str_to_title(nomdepto_censo), 
-                           id = paste0(coddepto, stringr::str_remove_all(nomdepto_censo, " ")))
+             dplyr::select(coddepto, nomdepto_censo,coddepto_censo, name_prov) %>% 
+             dplyr::mutate(nomdepto_censo = stringr::str_to_upper(nomdepto_censo), 
+                           id = paste0(coddepto, stringr::str_remove_all(nomdepto_censo, " "), name_prov))
            
-           # vuelvo a llamar la data de todas las grillas 
-           geofacet <-  readRDS(gzcon(url("https://github.com/electorArg/PolAr_Data/blob/master/geo/grillas_geofacet.rds?raw=true")))
-           
-           
+
            # agrego a la base de grillas el mismo codigo de id de la metadata
-           grillas_depto_id <- geofacet %>% dplyr::bind_rows(.id = "name_prov") %>% 
+           grillas_depto_id <- grillas_geofacet  %>% 
+             dplyr::bind_rows(.id = "name_prov") %>% 
+             tibble::as_tibble()%>% 
              dplyr::slice(25:dim(.)[1]) %>% 
              dplyr::mutate(code = stringr::str_pad(code, 3, "left", 0), 
                            id = paste0(code, stringr::str_remove_all(name, " "), name_prov)) 
            
             # Creo filtro para seleccionar grilla correcta
-           filter_provincia <- data %>% 
-             dplyr::left_join(grillas_depto_id) 
+           filtro_provincia <- data %>%
+                  dplyr::left_join(grillas_depto_id) %>% 
+                  dplyr::left_join(full_codes)
+           
+           filtro_id <- filtro_provincia %>%
+             dplyr::pull(id)
            
            # filtro la grilla de interes
            data <- grillas_depto_id %>% 
-             dplyr::filter(id %in% filter_provincia$id) %>% 
+             dplyr::filter(id %in% filtro_id) %>% 
              dplyr::select(name, code, row, col)
            
            #######################################################################
@@ -132,9 +134,9 @@ recode_district <- function(data,
            if(type == "indec"){
              
              data %>% 
-               dplyr::mutate(code = ifelse(code == unique(full_codes$coddepto_censo), 
-                                           unique(full_codes$coddepto_censo), 
-                                           unique(full_codes$coddepto_censo))) 
+               dplyr::mutate(code = dplyr::case_when(
+                 code == filtro_provincia$coddepto ~ filtro_provincia$coddepto_censo
+               )) 
              
              
            } else{

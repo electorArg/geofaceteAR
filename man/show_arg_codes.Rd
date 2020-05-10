@@ -19,6 +19,6 @@ La opción \code{viewer = TRUE} muestra un tabulado formateado en el _Viewer_ de
 }
 \examples{
 
-show_arg_grids(viewer = FALSE)
+show_arg_codes(viewer = FALSE)
 
 }

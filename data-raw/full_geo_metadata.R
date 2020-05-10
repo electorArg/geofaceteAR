@@ -32,4 +32,4 @@ data <- dine_indec %>%
 
 ### GET NAMES FOR GRIDS
 
-usethis::use_data("full_geo_metadata")
+usethis::use_data(full_geo_metadata,overwrite = TRUE)

@@ -16,20 +16,19 @@ _“Amplía `ggplot2` de una manera que facilita la creación de visualizaciones
 
 ### INSTALACIÓN 
 
-````
+```
 # install.packages('devtools') si no tiene instalado devtools
 
 # Instalar {geofaceteAR} desde repositorio de github
 devtools::install_github("https://github.com/electorArg/geofaceteAR")
+
 ```
 
 ### `{geofaceteAR}`
 
 En esta versión el paquete incluye unas pocas funciones: 
 
-* `show_arg_codes()`: Proveé un diccionario de identificadores geográficos y equivalencias 
-
-* `show_arg_grids()`: Lista los `id` disponibles para descargar una grilla del distrito de interés. 
+* `show_arg_codes()`: Lista los `id` disponibles para descargar una grilla del distrito de interés y proveé un diccionario de identificadores geográficos y equivalencias. 
 
 * `get_grid()`: obtiene la grilla de interés. 
 
