@@ -25,7 +25,7 @@ iso <- readr::read_csv("https://raw.githubusercontent.com/electorArg/PolAr_Data/
 
 
 # JOIN WITH PROVINCE NAMES         
-data <- dine_indec %>% 
+full_geo_metadata <- dine_indec %>% 
   dplyr::left_join(provCode) %>% 
   dplyr::left_join(iso)
 
