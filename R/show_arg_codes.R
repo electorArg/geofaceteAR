@@ -1,16 +1,17 @@
-#' Diccionario de codigos identificadores de distritos 
+#' Diccionario de códigos identificadores de distritos 
 #'
 #'@description
-#' Funcion que devuelve un data.frame con codigos y equivalencias de identificacion de unidades geograficas
-#'@param viewer Por default es \code{TRUE}. Cuando \code{FALSE} imprime en consola.
-#'@param nivel  Opcion para ver diccionario a nivel de \code{"provincias"} o de \code{"departamentos"}.
+#' Función que devuelve un \emph{data.frame} con códigos y equivalencias de identificación de unidades geográficas
+#' 
+#'@param viewer Por default es \code{TRUE} y  muestra una tabla formateada en el \emph{Viewer} de \emph{RStudio}. Cuando \code{FALSE} imprime en consola.
+#'
+#'@param nivel  Un character que permite elegir opción para ver diccionario a nivel de \code{"provincias"} o de \code{"departamentos"}.
+#'
 #'@import geofacet
 #'
 #'@examples 
 #'
 #' show_arg_codes(viewer = FALSE)
-#' 
-#' @details  La opción \code{viewer = TRUE} muestra un tabulado formateado en el _Viewer_ de _RStudio_. 
 #'
 #'@export
 

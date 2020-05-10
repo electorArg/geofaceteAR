@@ -2,20 +2,17 @@
 % Please edit documentation in R/show_arg_codes.R
 \name{show_arg_codes}
 \alias{show_arg_codes}
-\title{Diccionario de codigos identificadores de distritos}
+\title{Diccionario de códigos identificadores de distritos}
 \usage{
 show_arg_codes(viewer = TRUE, nivel = "provincias")
 }
 \arguments{
-\item{viewer}{Por default es \code{TRUE}. Cuando \code{FALSE} imprime en consola.}
+\item{viewer}{Por default es \code{TRUE} y  muestra una tabla formateada en el \emph{Viewer} de \emph{RStudio}. Cuando \code{FALSE} imprime en consola.}
 
-\item{nivel}{Opcion para ver diccionario a nivel de \code{"provincias"} o de \code{"departamentos"}.}
+\item{nivel}{Un character que permite elegir opción para ver diccionario a nivel de \code{"provincias"} o de \code{"departamentos"}.}
 }
 \description{
-Funcion que devuelve un data.frame con codigos y equivalencias de identificacion de unidades geograficas
-}
-\details{
-La opción \code{viewer = TRUE} muestra un tabulado formateado en el _Viewer_ de _RStudio_.
+Función que devuelve un \emph{data.frame} con códigos y equivalencias de identificación de unidades geográficas
 }
 \examples{
 

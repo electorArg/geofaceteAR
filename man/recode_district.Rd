@@ -2,33 +2,37 @@
 % Please edit documentation in R/recode_district.R
 \name{recode_district}
 \alias{recode_district}
-\title{Recodifica códigos de provincias o departamentos de Argentina}
+\title{Recodifica valores de etiquetas asignados a provincias o departamentos de Argentina}
 \usage{
 recode_district(data, type = NULL)
 }
 \arguments{
-\item{data}{debe ser un 'data.frame' obtenido con \code{\link{get_grid}}. Las grillas grillas disponibles 
+\item{data}{data.frame obtenido con \code{\link{get_grid}}. Las grillas grillas disponibles 
 se pueden chequear con \code{\link{show_arg_codes}}.}
 
-\item{type}{cual es el código qye se quiere definir en la grilla. Las opciones son \code{'indra'}, \code{'indec'} o \code{'iso'}}
+\item{type}{la variante del código que se quiere definir para la grilla. Las opciones son \code{'indra'}, \code{'indec'} o \code{'iso'}.}
 }
 \value{
-El valor por defecto es \code{codprov} y \code{coddepto} para provincia y departamentos, respectivamente. Estos corresponden 
-a la codificacion de los escrutinios provisorios de elecciones nacionales. Se puede optar por la nomenclautra de indec \code{*_censo} para
-ambos niveles o \code{ISO 3166-2}, para el nivel provincial.
+Los valores por defecto en \code{\link{get_grid}} son \code{codprov} para provincia y \code{coddepto} para departamentos, respectivamente. 
+Estos corresponden a la codificación de los escrutinios provisorios de elecciones nacionales y se etiquetaron como \code{'indra'} . 
+Se puede optar por la nomenclautra de \code{'indec'}, con la familia \code{\*_censo}, para ambos niveles, o la de \code{'iso'} con \code{\*_censo} , 
+para el nivel provincial.
 }
 \description{
-Función que permite recodificar código de provincia para utilizacion de grilla de Argentina y de departamentos para los 24 distritos
- subnacionales y hacer mas sencillala vinculacion con distinto tipo de bases de datos con diferentes indicadores.
+Función que permite recodificar etiquetas para utilización de grillas de Argentina y de departamentos para los 24 distritos
+ subnacionales. Ello permite hacer mas sencilla la vinculación con bases de datos de diversas fuentes.
 }
 \details{
-Respecto los datos se puede consultar la documentación de 
-\href{https://www.iso.org/obp/ui/#iso:code:3166:AR}{\code{ISO 3166-2} - International Organization for Standardization} y del
-del \href{https://www.iso.org/obp/ui/#iso:code:3166:AR}{\emph{INDEC}}. \code{codprov} es la codificacion con la que se publciaron las bases de datos 
-de INDRA, empresa encargada por muchos años de la tarea y utilizados en la libería \href{https://electorarg.github.io/polAr/}{polAr}.
+Respecto el origen de los datos se puede consultar la documentación de 
+\href{https://www.iso.org/obp/ui/#iso:code:3166:AR}{\code{ISO 3166-2} - International Organization for Standardization} y
+del \href{https://www.iso.org/obp/ui/#iso:code:3166:AR}{\emph{INDEC}}.
+
+\code{codprov} y \code{coddepto} son las codificaciones de las bases de datos de ¬emph{INDRA}, empresa encargada por
+muchos años de la tarea del escrutinio provisorio y utilizados en \href{https://electorarg.github.io/polAr/}{polAr}.
 }
 \examples{
 
+get_grid("ARGENTINA")
 
 
 get_grid("ARGENTINA") \%>\% 

@@ -14,16 +14,35 @@ knitr::opts_chunk$set(
 )
 ```
 
-```{r setup}
+
+
+
+```{r setup, echo=FALSE}
 library(geofaceteAR)
 library(patchwork)
 ```
 
 
-En el siguiente ejemplo podemos ver disintas opciones de código para las provincias de Argentina
+Ejemplo con grilla de Argetnina. Los valores por defecto del código de provincias corresponden al `codprov` de los escrutinios provisorios de INDRA. 
+
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+# GRILLA POR DEFECTO
+get_grid("ARGENTINA")
+```
+
+
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+plot <- get_grid("ARGENTINA") 
+
+patchwork::plot_spacer() +   grid_preview(plot) + patchwork::plot_spacer() 
+```
+
+
+En el siguiente ejemplo podemos ver las tres opciones disponibles para el nivel provincial (*indra*, *iso*, *indec*). El primer objeto `argentina_indra` es similar al anterior, que viene con códigos por defecto. Los dos restantes corresponden a las versiones recodificadas. 
 
 ```{r}
-
 # CODIGOS DE INDRA
 argentina_indra <- get_grid("ARGENTINA") %>% 
   recode_district(type = "indra")
@@ -48,9 +67,9 @@ argentina_indec
 ```
 
 
-Estos códigos sirven para _linkear_ la base de datos que estemos uzando con la grilla seleccionada en un gráfico de \pkg{ggplot2} haciendo `facet` con la función `facet_geo`de \pkg{geofacet}. Todas las funciones de este paquete están disponibles al utilizar cargada en \pkg{gepofaceteAR}. 
+Estos comandos pueden ser utiles para *linkear* más facilmente una base de datos que estemos usando, con `id` de distrito especifico, con la grilla correspondiente para un gráfico de \code{ggplot2}. De esta forma podemos acomodar las funciones `facet` con una aproximación geográfica con `facet_geo`de \code{geofacet}. Otro ejemplo de esto puede encontrarse en este [post](https://tuqmano.github.io/2019/01/21/geofacetear/).
 
-Así, por ejemplo, podemos inspeccionar el diseño de las grillas con `grid_preview()`:
+Todas las funciones de \code{geofacet} están disponibles al cargar \code{geofaceteAR} Así, por ejemplo, podemos inspeccionar el diseño de las grillas con `grid_preview()`:
 
 ```{r}
 
