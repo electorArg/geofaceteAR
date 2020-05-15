@@ -74,14 +74,14 @@ recode_district <- function(data,
                        
                        data %>% 
                          dplyr::left_join(full_codes, by = c("code" = "codprov")) %>% 
-                         dplyr::select(1:3, code = codprov_censo)
+                         dplyr::select(2, 3, 5, code = codprov_censo)
                        
                        
                      } else if(type == "iso"){
                        
                        data %>% 
                          dplyr::left_join(full_codes, by = c("code" = "codprov")) %>% 
-                         dplyr::select(1:3, code = codprov_iso)
+                         dplyr::select(2, 3, 5, code = codprov_iso)
                        
                        
                      } else{
