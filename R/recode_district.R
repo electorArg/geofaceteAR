@@ -73,17 +73,17 @@ recode_district <- function(data,
                      if(type == "indec"){
                        
                        data %>% 
-                         dplyr::mutate(code = ifelse(code == full_codes$codprov_censo, 
-                                              full_codes$codprov_censo, 
-                                              full_codes$codprov_censo)) 
+                         dplyr::left_join(full_codes, by = c("code" = "codprov")) %>% 
+                         dplyr::select(1:3, code = codprov_censo)
                        
                        
                      } else if(type == "iso"){
                        
                        data %>% 
-                         dplyr::mutate(code = ifelse(code == full_codes$codprov_iso, 
-                                              full_codes$codprov_codprov_iso, 
-                                              full_codes$codprov_iso)) 
+                         dplyr::left_join(full_codes, by = c("code" = "codprov")) %>% 
+                         dplyr::select(1:3, code = codprov_iso)
+                       
+                       
                      } else{
                        
                        data
