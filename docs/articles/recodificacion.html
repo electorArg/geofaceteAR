@@ -94,6 +94,7 @@
     
 <div class="sourceCode" id="cb1"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">geofaceteAR</span>)
 <span class="co">#&gt; Loading required package: geofacet</span>
+<span class="co">#&gt; Warning: package 'geofacet' was built under R version 3.6.3</span>
 <span class="co">#&gt; Registered S3 method overwritten by 'geofacet':</span>
 <span class="co">#&gt;   method from   </span>
 <span class="co">#&gt;   +.gg   ggplot2</span>
@@ -139,31 +140,31 @@
 <span class="no">argentina_indec</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/get_grid.html">get_grid</a></span>(<span class="st">"ARGENTINA"</span>) <span class="kw">%&gt;%</span>
   <span class="fu"><a href="../reference/recode_district.html">recode_district</a></span>(<span class="kw">type</span> <span class="kw">=</span> <span class="st">"indec"</span>)</pre></body></html></div>
 <p>Imprimimoos los de <code>argentina_indec</code> y observamos los cambios en <code>code</code>:</p>
-<pre><code>#&gt;    name_provincia row col code                name
-#&gt; 1       ARGENTINA   1   1   02               JUJUY
-#&gt; 2       ARGENTINA   2   3   06             FORMOSA
-#&gt; 3       ARGENTINA   2   5   10            MISIONES
-#&gt; 4       ARGENTINA   2   1   14               SALTA
-#&gt; 5       ARGENTINA   2   2   18             TUCUMAN
-#&gt; 6       ARGENTINA   3   1   22           CATAMARCA
-#&gt; 7       ARGENTINA   3   3   26               CHACO
-#&gt; 8       ARGENTINA   3   4   30          CORRIENTES
-#&gt; 9       ARGENTINA   3   2   34 SANTIAGO DEL ESTERO
-#&gt; 10      ARGENTINA   4   2   38             CORDOBA
-#&gt; 11      ARGENTINA   4   4   42          ENTRE RIOS
-#&gt; 12      ARGENTINA   4   1   46            LA RIOJA
-#&gt; 13      ARGENTINA   4   3   50            SANTA FE
-#&gt; 14      ARGENTINA   5   3   54        BUENOS AIRES
-#&gt; 15      ARGENTINA   5   4   58                CABA
-#&gt; 16      ARGENTINA   5   1   62            SAN JUAN
-#&gt; 17      ARGENTINA   5   2   66            SAN LUIS
-#&gt; 18      ARGENTINA   6   2   70            LA PAMPA
-#&gt; 19      ARGENTINA   6   1   74             MENDOZA
-#&gt; 20      ARGENTINA   7   1   78             NEUQUEN
-#&gt; 21      ARGENTINA   7   2   82           RIO NEGRO
-#&gt; 22      ARGENTINA   8   1   86              CHUBUT
-#&gt; 23      ARGENTINA   9   1   90          SANTA CRUZ
-#&gt; 24      ARGENTINA  10   1   94    TIERRA DEL FUEGO</code></pre>
+<pre><code>#&gt;    row col                name code
+#&gt; 1    1   1               JUJUY   38
+#&gt; 2    2   3             FORMOSA   34
+#&gt; 3    2   5            MISIONES   54
+#&gt; 4    2   1               SALTA   66
+#&gt; 5    2   2             TUCUMAN   90
+#&gt; 6    3   1           CATAMARCA   10
+#&gt; 7    3   3               CHACO   22
+#&gt; 8    3   4          CORRIENTES   18
+#&gt; 9    3   2 SANTIAGO DEL ESTERO   86
+#&gt; 10   4   2             CORDOBA   14
+#&gt; 11   4   4          ENTRE RIOS   30
+#&gt; 12   4   1            LA RIOJA   46
+#&gt; 13   4   3            SANTA FE   82
+#&gt; 14   5   3        BUENOS AIRES   06
+#&gt; 15   5   4                CABA   02
+#&gt; 16   5   1            SAN JUAN   70
+#&gt; 17   5   2            SAN LUIS   74
+#&gt; 18   6   2            LA PAMPA   42
+#&gt; 19   6   1             MENDOZA   50
+#&gt; 20   7   1             NEUQUEN   58
+#&gt; 21   7   2           RIO NEGRO   62
+#&gt; 22   8   1              CHUBUT   26
+#&gt; 23   9   1          SANTA CRUZ   78
+#&gt; 24  10   1    TIERRA DEL FUEGO   94</code></pre>
 <p>Estos comandos pueden ser utiles para <em>linkear</em> más facilmente una base de datos que estemos usando, con <code>id</code> de distrito especifico, con la grilla correspondiente para un gráfico de <code>ggplot2</code>. De esta forma podemos acomodar las funciones <code>facet</code> con una aproximación geográfica con <code>facet_geo</code>de <code>geofacet</code>. Otro ejemplo de esto puede encontrarse en este <a href="https://tuqmano.github.io/2019/01/21/geofacetear/">post</a>.</p>
 <p>Todas las funciones de <code>geofacet</code> están disponibles al cargar <code>geofaceteAR</code>. Así, por ejemplo, podemos inspeccionar el diseño de las grillas con <code>grid_preview()</code>:</p>
 <p><img src="recodificacion_files/figure-html/unnamed-chunk-6-1.png" width="700"></p>
