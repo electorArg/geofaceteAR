@@ -2,9 +2,15 @@
 
 <img src="https://github.com/electorArg/geofaceteAR/blob/master/hex/ggplot2.png?raw=true" width="200">
 
+
 `{geofaceteAR}` nació como idea para la primera edición de [LatinR](https://github.com/LatinR/presentaciones-LatinR2018#geofaceting-argentina-slides--repositorio) que se llevó a cabo en Buenos Aires en el año 2018. Como describí en un viejo [post](https://tuqmano.github.io/2019/01/21/geofacetear/), el mismo podía ser pensado como una $extension^2$: del proyecto [`{geofacet}`](https://hafen.github.io/geofacet/) de Ryan Hafen y, en otro nivel, de las grillas o `facet` de `{ggplot2}`.
 
 Con este paquete nos montamos sobre ese desarrollo y agregamos funciones de utilidad para trabajar con estas grillas/mapas de distritos de Argentina. 
+
+ <!-- badges: start -->
+  [![Travis build status](https://travis-ci.org/electorArg/geofaceteAR.svg?branch=master)](https://travis-ci.org/electorArg/geofaceteAR)
+  <!-- badges: end -->
+
 
 ---
 
