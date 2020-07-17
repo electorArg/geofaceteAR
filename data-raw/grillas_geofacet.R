@@ -741,23 +741,42 @@ codigos %>%
 
 
 
+
+
+# AGLOMERADOS - ARGENTINA (EPH) ####
+
+eph_grid <- data.frame(
+  code = c("19", "7", "23", "15", "22", "12", "8", "29", "14", "18", "25", "6", "5", "4", "38", "13", "27", "33", "36", "10", 
+           "32", "30", "2", "3", "26", "17", "34", "93", "91", "9", "20", "31"),
+  name = str_replace(c("Jujuy - Palpalá", "Posadas", "Salta", "Formosa", "Gran Catamarca", "Corrientes", "Gran Resistencia", 
+                       "Gran Tucumán - T. Viejo", "Concordia", "S.del Estero - La Banda", "La Rioja",
+                       "Gran Paraná", "Gran Santa Fé", "Gran Rosario", "San Nicolás - Villa Constitución", "Gran Córdoba",
+                       "Gran San Juan", "Partidos del GBA", "Río Cuarto", "Gran Mendoza", "Ciudad de Bs As", "Santa Rosa - Toay", 
+                       "Gran La Plata", "Bahía Blanca - Cerri", "San Luis - El Chorrillo", "Neuquén - Plottier", "Mar del Plata - Batán",
+                       "Viedma - Carmen de Patagones", "Rawson - Trelew", "Cdro. Rivadavia - R.Tilly", "Río Gallegos", "Ushuaia - Río Grande"),
+                     pattern = "- ", replacement = "\n"),
+  row = c(1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 7, 7, 8, 9, 10),
+  col = c(1, 6, 2, 3, 1, 5, 4, 3, 5, 2, 1, 4, 3, 4, 5, 2, 1, 4, 2, 1, 5, 3, 5, 3, 2, 1, 4, 2, 1, 1, 1, 1),
+  stringsAsFactors = FALSE) %>% 
+  dplyr::mutate(name = stringr::str_to_upper(name)) %>% 
+  dplyr::arrange(name) %>% 
+  print()
+
+
 ### CREO UN UNICO data.frame COMO LIST CON CADA UNO DE LOS DISTRITOS
 grillas_geofacet <- list(argentina, caba, catamarca, chaco, chubut, cordoba, corrientes,
              entre_rios, formosa, jujuy, la_pampa, la_rioja, mendoza, misiones,
              neuquen, pba, rio_negro, salta, santa_cruz, santa_fe, santiago_del_estero,
-             san_juan, san_luis, tierra_del_fuego, tucuman)
+             san_juan, san_luis, tierra_del_fuego, tucuman, eph_grid)
 
 
 #Nombres de provincias
 names(grillas_geofacet) <- c("ARGENTINA","CABA", "CATAMARCA", "CHACO", "CHUBUT", "CORDOBA", "CORRIENTES",
                  "ENTRE RIOS", "FORMOSA", "JUJUY", "LA PAMPA", "LA RIOJA", "MENDOZA", "MISIONES",
                  "NEUQUEN", "PBA", "RIO NEGRO", "SALTA", "SANTA CRUZ", "SANTA FE", "SANTIAGO DEL ESTERO",
-                 "SAN JUAN", "SAN LUIS", "TIERRA DEL FUEGO", "TUCUMAN")
+                 "SAN JUAN", "SAN LUIS", "TIERRA DEL FUEGO", "TUCUMAN", "AGLOMERADOS")
 
 
 
 
 usethis::use_data(grillas_geofacet,overwrite = TRUE)
-
-
-
