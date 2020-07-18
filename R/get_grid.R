@@ -26,7 +26,7 @@
     assertthat::assert_that(distrito %in% c("ARGENTINA", "CABA", "CATAMARCA", "CHACO", "CHUBUT", "CORDOBA", "CORRIENTES",
                                             "ENTRE RIOS", "FORMOSA", "JUJUY", "LA PAMPA", "LA RIOJA", "MENDOZA", "MISIONES",
                                             "NEUQUEN","PBA", "RIO NEGRO", "SALTA", "SANTA CRUZ", "SANTA FE", "SANTIAGO DEL ESTERO",
-                                            "SAN JUAN", "SAN LUIS", "TIERRA DEL FUEGO", "TUCUMAN"),
+                                            "SAN JUAN", "SAN LUIS", "TIERRA DEL FUEGO", "TUCUMAN", "AGLOMERADOS"),
                             msg = "no es un distrito valido. Chequearlos con 'show_arg_grids()")
 
 
